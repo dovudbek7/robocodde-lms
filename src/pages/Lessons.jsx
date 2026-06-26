@@ -98,7 +98,8 @@ export default function Lessons() {
                       return (
                         <div
                           key={lesson.id}
-                          className={`flex items-center gap-3.5 px-5 py-4 ${i < modules[mod].length - 1 ? "border-b border-ios-gray2" : ""} ${locked ? "" : "hover:bg-ios-gray1 cursor-pointer"} transition-colors`}
+                          title={locked ? "Bu dars hali ochilmagan" : undefined}
+                          className={`flex items-center gap-3.5 px-5 py-4 ${i < modules[mod].length - 1 ? "border-b border-ios-gray2" : ""} ${locked ? "cursor-not-allowed" : "hover:bg-ios-gray1 cursor-pointer"} transition-colors`}
                         >
                           <div
                             className={`w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold shrink-0 ${statusDot[effectiveStatus]}`}
