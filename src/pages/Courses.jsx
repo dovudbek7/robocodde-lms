@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { HiArrowRight } from 'react-icons/hi'
 import { useCourses } from '../hooks/useCourses'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import ProgressBar from '../components/ui/ProgressBar'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 
@@ -11,6 +12,7 @@ const colorMap = {
 }
 
 export default function Courses() {
+  useDocumentTitle('Kurslar')
   const { data: courses = [], isLoading } = useCourses()
 
   return (
