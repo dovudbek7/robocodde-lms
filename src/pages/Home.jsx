@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { HiArrowRight, HiFire, HiLightningBolt, HiCheckCircle } from 'react-icons/hi'
 import { useCourses } from '../hooks/useCourses'
 import { useProgress } from '../hooks/useProgress'
+import { useUser } from '../hooks/useUser'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import ProgressBar from '../components/ui/ProgressBar'
 import Badge from '../components/ui/Badge'
@@ -29,6 +30,7 @@ export default function Home() {
   useDocumentTitle('Bosh sahifa')
   const { data: courses = [], isLoading } = useCourses()
   const { completedCount } = useProgress()
+  const { data: user } = useUser()
 
   const totalLessons = courses.reduce((s, c) => s + c.totalLessons, 0)
   const totalCompleted = courses.reduce((s, c) => s + c.completedLessons, 0)
@@ -44,7 +46,12 @@ export default function Home() {
             <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-ios-blue/20" />
             <div className="absolute -bottom-16 left-5 w-40 h-40 rounded-full bg-ios-purple/15" />
             <p className="text-sm text-white/55 mb-1 relative">{getGreeting()}</p>
-            <h2 className="text-2xl font-extrabold tracking-tight mb-6 relative">Dovudbek Xabibullayev</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight mb-1 relative">{user?.name ?? 'Dovudbek Xabibullayev'}</h2>
+            {user?.streak > 0 && (
+              <p className="text-sm text-white/60 mb-5 relative flex items-center gap-1">
+                🔥 <span>{user.streak} kunlik streak</span>
+              </p>
+            )}
             <div className="flex gap-8 relative">
               {[
                 { val: completedCount || totalCompleted || 12, lbl: "Dars o'tildi" },
