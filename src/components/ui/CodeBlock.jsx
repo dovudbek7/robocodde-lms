@@ -1,4 +1,9 @@
+import { useState } from 'react'
+import { HiClipboard, HiCheck } from 'react-icons/hi'
+
 export default function CodeBlock({ code = '', filename = 'App.jsx' }) {
+  const [copied, setCopied] = useState(false)
+
   const highlighted = code
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -7,6 +12,13 @@ export default function CodeBlock({ code = '', filename = 'App.jsx' }) {
     .replace(/('.*?'|".*?")/g, '<span class="text-yellow-300">$1</span>')
     .replace(/(\/\/.*)/g, '<span class="text-zinc-500">$1</span>')
     .replace(/\b(useState|useEffect|useQuery)\b/g, '<span class="text-cyan-300">$1</span>')
+
+  function handleCopy() {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1800)
+    })
+  }
 
   return (
     <div className="bg-[#1C1C1E] rounded-2xl overflow-hidden">
@@ -17,6 +29,13 @@ export default function CodeBlock({ code = '', filename = 'App.jsx' }) {
           <div className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
         </div>
         <span className="text-[11px] text-zinc-500 font-mono">{filename}</span>
+        <button
+          onClick={handleCopy}
+          className="flex items-center gap-1 text-[11px] text-zinc-500 hover:text-zinc-200 transition-colors"
+        >
+          {copied ? <HiCheck className="text-ios-green" /> : <HiClipboard />}
+          {copied ? "Nusxalandi" : "Nusxalash"}
+        </button>
       </div>
       <pre className="px-4 py-4 overflow-x-auto text-[13px] leading-7 text-zinc-200 font-mono">
         <code dangerouslySetInnerHTML={{ __html: highlighted }} />
