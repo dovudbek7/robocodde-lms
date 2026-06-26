@@ -9,14 +9,18 @@ export default function Progress() {
   const { completedCount } = useProgress()
   const { data: courses = [] } = useCourses()
 
+  const totalLessons = courses.reduce((s, c) => s + c.totalLessons, 0)
+  const totalCompleted = courses.reduce((s, c) => s + c.completedLessons, 0)
+  const overallPct = totalLessons > 0 ? Math.round((totalCompleted / totalLessons) * 100) : 68
+
   return (
     <div className="p-5 lg:p-8 max-w-[900px]">
       {/* Stats row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         {[
-          { val: completedCount || 12, lbl: "O'tilgan darslar", color: 'text-ios-blue' },
+          { val: completedCount || totalCompleted || 12, lbl: "O'tilgan darslar", color: 'text-ios-blue' },
           { val: 3, lbl: 'Quiz yechildi', color: 'text-ios-green' },
-          { val: '68%', lbl: 'Umumiy progress', color: 'text-ios-purple' },
+          { val: `${overallPct}%`, lbl: 'Umumiy progress', color: 'text-ios-purple' },
           { val: 7, lbl: 'Kun streak 🔥', color: 'text-ios-orange' },
         ].map(({ val, lbl, color }) => (
           <div key={lbl} className="bg-white rounded-2xl p-4 text-center">
