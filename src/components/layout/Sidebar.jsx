@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { HiHome, HiBookOpen, HiChartBar, HiGlobeAlt, HiCog, HiCube, HiUser } from 'react-icons/hi'
+import { useUser } from '../../hooks/useUser'
 
 const navItems = [
   { label: 'Bosh sahifa', to: '/', icon: HiHome, exact: true },
@@ -15,6 +16,7 @@ const courses = [
 ]
 
 export default function Sidebar({ open, onClose }) {
+  const { data: user } = useUser()
   return (
     <>
       <aside className={`fixed top-0 left-0 bottom-0 w-[240px] bg-white border-r border-ios-gray2 flex flex-col z-[200] transition-transform duration-250 ${open ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
@@ -66,10 +68,14 @@ export default function Sidebar({ open, onClose }) {
         </nav>
 
         <div className="px-4 py-4 border-t border-ios-gray2 flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-sm font-bold shrink-0">D</div>
+          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-sm font-bold shrink-0">
+            {user?.avatar ?? 'D'}
+          </div>
           <div>
-            <p className="text-sm font-semibold text-ios-label">Dovudbek X.</p>
-            <p className="text-xs text-ios-gray4">O'quvchi</p>
+            <p className="text-sm font-semibold text-ios-label">
+              {user ? user.name.split(' ').slice(0, 2).join(' ') : 'Yuklanmoqda...'}
+            </p>
+            <p className="text-xs text-ios-gray4">{user?.role ?? "O'quvchi"}</p>
           </div>
         </div>
       </aside>
