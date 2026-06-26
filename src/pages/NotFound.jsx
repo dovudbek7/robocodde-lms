@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { HiHome } from 'react-icons/hi'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function NotFound() {
+  useDocumentTitle('Sahifa topilmadi')
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 text-center px-6">
       <div className="w-20 h-20 bg-ios-gray1 rounded-3xl flex items-center justify-center mb-2">
