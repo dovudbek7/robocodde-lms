@@ -1,9 +1,10 @@
-import { NavLink, useNavigate } from 'react-router-dom'
-import { HiHome, HiBookOpen, HiChartBar, HiGlobeAlt, HiCog, HiCube, HiAcademicCap } from 'react-icons/hi'
+import { NavLink } from 'react-router-dom'
+import { HiHome, HiChartBar, HiGlobeAlt, HiCog, HiCube, HiUser } from 'react-icons/hi'
 
 const navItems = [
   { label: 'Bosh sahifa', to: '/', icon: HiHome, exact: true },
   { label: 'Progressim', to: '/progress', icon: HiChartBar },
+  { label: 'Profil', to: '/profile', icon: HiUser },
 ]
 
 const courses = [
