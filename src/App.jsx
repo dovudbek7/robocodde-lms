@@ -5,6 +5,7 @@ import Lessons from './pages/Lessons'
 import LessonDetail from './pages/LessonDetail'
 import Progress from './pages/Progress'
 import Profile from './pages/Profile'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="lessons/:lessonId" element={<LessonDetail />} />
           <Route path="progress" element={<Progress />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
