@@ -118,6 +118,12 @@ export default function Home() {
                 Davom etish →
               </span>
             </Link>
+            <Link
+              to="/courses"
+              className="flex items-center justify-center gap-2 px-5 py-3 border-t border-ios-gray2 text-sm font-semibold text-ios-blue hover:bg-blue-50 transition-colors"
+            >
+              Barcha kurslarni ko'rish →
+            </Link>
           </div>
         </div>
 
