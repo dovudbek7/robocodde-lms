@@ -1,5 +1,6 @@
 import { useProgress } from '../hooks/useProgress'
 import { useCourses } from '../hooks/useCourses'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import ProgressBar from '../components/ui/ProgressBar'
 
 const weekDays = ['Du', 'Se', 'Ch', 'Pa', 'Ju', 'Sh', 'Ya']
@@ -7,6 +8,7 @@ const weekActivity = [3, 5, 2, 4, 6, 3, 1]
 const todayIdx = (new Date().getDay() + 6) % 7
 
 export default function Progress() {
+  useDocumentTitle('Progressim')
   const { completedCount } = useProgress()
   const { data: courses = [] } = useCourses()
 

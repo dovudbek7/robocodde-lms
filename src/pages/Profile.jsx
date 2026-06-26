@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { HiPencil, HiMail, HiPhone, HiCalendar, HiLocationMarker, HiLogout } from 'react-icons/hi'
 import { useProgress } from '../hooks/useProgress'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function Profile() {
+  useDocumentTitle('Profil')
   const { completedCount } = useProgress()
   const [editing, setEditing] = useState(false)
   const [name, setName] = useState('Dovudbek Xabibullayev')

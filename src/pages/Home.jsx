@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { HiArrowRight, HiFire, HiLightningBolt, HiCheckCircle } from 'react-icons/hi'
 import { useCourses } from '../hooks/useCourses'
 import { useProgress } from '../hooks/useProgress'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import ProgressBar from '../components/ui/ProgressBar'
 import Badge from '../components/ui/Badge'
 
@@ -25,6 +26,7 @@ function getGreeting() {
 }
 
 export default function Home() {
+  useDocumentTitle('Bosh sahifa')
   const { data: courses = [], isLoading } = useCourses()
   const { completedCount } = useProgress()
 
