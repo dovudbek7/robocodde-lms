@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { HiArrowRight } from 'react-icons/hi'
 import { useCourses } from '../hooks/useCourses'
 import ProgressBar from '../components/ui/ProgressBar'
+import LoadingSpinner from '../components/ui/LoadingSpinner'
 
 const colorMap = {
   blue: { bg: 'bg-blue-50', text: 'text-ios-blue', border: 'border-blue-100' },
@@ -21,9 +22,7 @@ export default function Courses() {
 
       <div className="space-y-4">
         {isLoading
-          ? [1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-2xl h-28 animate-pulse" />
-            ))
+          ? <LoadingSpinner text="Kurslar yuklanmoqda..." />
           : courses.map((course) => {
               const pct = Math.round((course.completedLessons / course.totalLessons) * 100)
               const c = colorMap[course.color] ?? colorMap.blue
