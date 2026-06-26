@@ -85,7 +85,7 @@ export default function QuizTab({ questions = [], lessonId }) {
       {answered && (
         <div className="bg-green-50 rounded-xl px-4 py-3.5 mb-5">
           <p className="text-xs font-bold text-ios-green mb-1">
-            {answers[current] === q.correct ? '✓ To'g'ri javob!' : '✗ Noto'g'ri. To'g'ri javob:'}
+            {answers[current] === q.correct ? "✓ To'g'ri javob!" : "✗ Noto'g'ri. To'g'ri javob:"}
           </p>
           <p className="text-sm text-ios-label2">{q.explanation}</p>
         </div>

@@ -12,14 +12,14 @@ export const quizzes = {
       question: 'React bu nima?',
       options: ['Framework', 'JavaScript kutubxonasi', 'CSS preprocessor', 'Database'],
       correct: 1,
-      explanation: 'React — JavaScript kutubxonasi (library), framework emas. Bu muhim farq.',
+      explanation: "React — JavaScript kutubxonasi (library), framework emas. Bu muhim farq.",
     },
     {
       id: 3,
       question: 'React qaysi texnologiyadan foydalanadi?',
       options: ['Real DOM', 'Virtual DOM', 'Shadow DOM', 'HTML DOM'],
       correct: 1,
-      explanation: 'React Virtual DOM dan foydalanadi — bu samaradorlikni oshiradi.',
+      explanation: "React Virtual DOM dan foydalanadi — bu samaradorlikni oshiradi.",
     },
     {
       id: 4,
@@ -32,10 +32,10 @@ export const quizzes = {
   'js-basics': [
     {
       id: 1,
-      question: 'Qaysi kalit so'z o'zgartirib bo'lmaydigan o'zgaruvchi e'lon qiladi?',
+      question: "Qaysi kalit so'z o'zgartirib bo'lmaydigan o'zgaruvchi e'lon qiladi?",
       options: ['var', 'let', 'const', 'static'],
       correct: 2,
-      explanation: 'const bilan e'lon qilingan o'zgaruvchiga qayta qiymat berib bo'lmaydi.',
+      explanation: "const bilan e'lon qilingan o'zgaruvchiga qayta qiymat berib bo'lmaydi.",
     },
     {
       id: 2,
@@ -49,13 +49,13 @@ export const quizzes = {
       question: 'Qaysi qiymat boolean emas?',
       options: ['true', 'false', '0', 'null'],
       correct: 2,
-      explanation: '0 — bu number, boolean emas. Boolean faqat true yoki false bo'ladi.',
+      explanation: "0 — bu number, boolean emas. Boolean faqat true yoki false bo'ladi.",
     },
   ],
   'html-basics': [
     {
       id: 1,
-      question: 'HTML ning to'liq nomi nima?',
+      question: "HTML ning to'liq nomi nima?",
       options: ['Hyper Transfer Markup Language', 'HyperText Markup Language', 'High Text Machine Learning', 'HyperText Making Links'],
       correct: 1,
       explanation: 'HTML — HyperText Markup Language.',

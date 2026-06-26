@@ -33,7 +33,7 @@ export default function Home() {
             <h2 className="text-2xl font-extrabold tracking-tight mb-6 relative">Dovudbek Xabibullayev</h2>
             <div className="flex gap-8 relative">
               {[
-                { val: completedCount || 12, lbl: 'Dars o'tildi' },
+                { val: completedCount || 12, lbl: "Dars o'tildi" },
                 { val: 3, lbl: 'Quiz yechildi' },
                 { val: '68%', lbl: 'Umumiy progress' },
               ].map(({ val, lbl }) => (
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="bg-white rounded-2xl p-5">
             <p className="text-sm font-bold text-ios-label mb-4">Haftalik statistika</p>
             <div className="flex justify-around text-center">
-              {[{ val: 5, lbl: 'Dars' }, { val: 2, lbl: 'Quiz' }, { val: '87%', lbl: 'O'rtacha' }].map(({ val, lbl }) => (
+              {[{ val: 5, lbl: 'Dars' }, { val: 2, lbl: 'Quiz' }, { val: '87%', lbl: "O'rtacha" }].map(({ val, lbl }) => (
                 <div key={lbl}>
                   <p className="text-2xl font-extrabold text-ios-blue">{val}</p>
                   <p className="text-xs text-ios-gray4 mt-0.5">{lbl}</p>

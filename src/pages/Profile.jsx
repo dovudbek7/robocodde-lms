@@ -58,8 +58,8 @@ export default function Profile() {
         {[
           { icon: HiMail, label: 'Email', val: email },
           { icon: HiPhone, label: 'Telefon', val: '+998 90 123 45 67' },
-          { icon: HiCalendar, label: 'Qo'shilgan', val: '15 Yanvar, 2025' },
-          { icon: HiLocationMarker, label: 'Shahar', val: 'Toshkent, O'zbekiston' },
+          { icon: HiCalendar, label: "Qo'shilgan", val: '15 Yanvar, 2025' },
+          { icon: HiLocationMarker, label: 'Shahar', val: "Toshkent, O'zbekiston" },
         ].map(({ icon: Icon, label, val }, i, arr) => (
           <div key={label} className={`flex items-center gap-4 px-5 py-4 ${i < arr.length - 1 ? 'border-b border-ios-gray2' : ''}`}>
             <div className="w-9 h-9 rounded-xl bg-ios-gray1 flex items-center justify-center shrink-0">
@@ -78,7 +78,7 @@ export default function Profile() {
         {[
           { label: 'Bildirishnomalar', sublabel: 'Dars eslatmalari', toggle: true },
           { label: 'Til', sublabel: "O'zbek tili" },
-          { label: 'Parolni o'zgartirish', sublabel: 'Oxirgi o'zgarish: 3 oy oldin' },
+          { label: "Parolni o'zgartirish", sublabel: "Oxirgi o'zgarish: 3 oy oldin" },
         ].map(({ label, sublabel, toggle }, i, arr) => (
           <div key={label} className={`flex items-center gap-4 px-5 py-4 ${i < arr.length - 1 ? 'border-b border-ios-gray2' : ''}`}>
             <div className="flex-1">

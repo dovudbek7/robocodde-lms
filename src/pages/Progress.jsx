@@ -14,7 +14,7 @@ export default function Progress() {
       {/* Stats row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         {[
-          { val: completedCount || 12, lbl: 'O'tilgan darslar', color: 'text-ios-blue' },
+          { val: completedCount || 12, lbl: "O'tilgan darslar", color: 'text-ios-blue' },
           { val: 3, lbl: 'Quiz yechildi', color: 'text-ios-green' },
           { val: '68%', lbl: 'Umumiy progress', color: 'text-ios-purple' },
           { val: 7, lbl: 'Kun streak 🔥', color: 'text-ios-orange' },
@@ -69,10 +69,10 @@ export default function Progress() {
       <p className="text-xs font-bold uppercase tracking-wider text-ios-gray4 mt-6 mb-3">Yutuqlar</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {[
-          { icon: '🔥', label: '7 kun streak', desc: 'Ketma-ket 7 kun o'qildi', earned: true },
+          { icon: '🔥', label: '7 kun streak', desc: "Ketma-ket 7 kun o'qildi", earned: true },
           { icon: '✅', label: 'Foundation', desc: 'Foundation kursi tugallandi', earned: true },
           { icon: '⚡', label: '10 quiz', desc: '10 ta quiz yechildi', earned: true },
-          { icon: '🚀', label: 'React boshlanchi', desc: 'Birinchi React darsi o'tildi', earned: true },
+          { icon: '🚀', label: 'React boshlanchi', desc: "Birinchi React darsi o'tildi", earned: true },
           { icon: '💯', label: 'Mukammal quiz', desc: '100% natija olindi', earned: false },
           { icon: '🏆', label: 'Frontend master', desc: 'Barcha darslar tugallandi', earned: false },
         ].map(({ icon, label, desc, earned }) => (

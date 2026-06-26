@@ -7,23 +7,23 @@ const practices = [
     color: 'text-ios-green',
     bg: 'bg-green-50',
     title: 'Counter ilovasi yarating',
-    desc: 'useState dan foydalanib, + va − tugmalari bilan son ko'rsatadigan counter yarating.',
-    hint: 'const [count, setCount] = useState(0) dan boshlang.',
+    desc: "useState dan foydalanib, + va − tugmalari bilan son ko'rsatadigan counter yarating.",
+    hint: "const [count, setCount] = useState(0) dan boshlang.",
   },
   {
-    level: 'O'RTA',
+    level: "O'RTA",
     color: 'text-ios-orange',
     bg: 'bg-orange-50',
     title: 'Todo List ilovasi',
-    desc: 'Foydalanuvchi vazifa qo'sha oladigan, o'chira oladigan va bajarilgan deb belgilay oladigan todo list yarating.',
+    desc: "Foydalanuvchi vazifa qo'sha oladigan, o'chira oladigan va bajarilgan deb belgilay oladigan todo list yarating.",
     hint: 'Holatni massiv sifatida saqlang: useState([]).',
   },
   {
     level: 'QIYIN',
     color: 'text-ios-red',
     bg: 'bg-red-50',
-    title: 'API dan ma'lumot olish',
-    desc: 'useEffect va fetch yordamida ochiq API dan foydalanuvchilar ro'yxatini olib, ekranda chiqaring.',
+    title: "API dan ma'lumot olish",
+    desc: "useEffect va fetch yordamida ochiq API dan foydalanuvchilar ro'yxatini olib, ekranda chiqaring.",
     hint: 'jsonplaceholder.typicode.com/users dan foydalaning.',
   },
 ]
@@ -37,7 +37,7 @@ export default function PracticeTab() {
       {practices.map(({ level, color, bg, title, desc, hint }, i) => (
         <div key={i} className="bg-white rounded-2xl p-5">
           <p className={`text-xs font-bold uppercase tracking-wider mb-2 ${color}`}>
-            {level === 'OSON' ? '🟢' : level === 'O'RTA' ? '🟡' : '🔴'} {level}
+            {level === 'OSON' ? '🟢' : level === "O'RTA" ? '🟡' : '🔴'} {level}
           </p>
           <p className="text-base font-bold text-ios-label mb-1.5">{title}</p>
           <p className="text-sm text-ios-gray4 leading-relaxed mb-4">{desc}</p>
@@ -60,7 +60,7 @@ export default function PracticeTab() {
               onClick={() => setOpenHint(openHint === i ? null : i)}
               className="bg-ios-gray1 text-ios-label2 rounded-full px-5 py-2 text-sm font-semibold hover:bg-ios-gray2 transition-colors"
             >
-              {openHint === i ? 'Yopish' : 'Maslahat ko'rish'}
+              {openHint === i ? 'Yopish' : "Maslahat ko'rish"}
             </button>
           </div>
         </div>

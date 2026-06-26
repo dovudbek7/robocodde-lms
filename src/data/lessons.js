@@ -17,7 +17,7 @@ export const lessons = {
           heading: 'HTML nima?',
           bullets: [
             'HTML — <strong>HyperText Markup Language</strong>, veb sahifalar yaratish uchun standart til',
-            'Brauzer HTML ni o'qib, sahifani ko'rsatadi',
+            "Brauzer HTML ni o'qib, sahifani ko'rsatadi",
             '1991 yilda Tim Berners-Lee tomonidan yaratilgan',
           ],
         },
@@ -28,7 +28,7 @@ export const lessons = {
             '<strong>&lt;p&gt;</strong> — paragraf',
             '<strong>&lt;a&gt;</strong> — havola',
             '<strong>&lt;img&gt;</strong> — rasm',
-            '<strong>&lt;div&gt;</strong> — bo'lim',
+            "<strong>&lt;div&gt;</strong> — bo'lim",
           ],
         },
       ],
@@ -60,7 +60,7 @@ export const lessons = {
           heading: 'CSS nima?',
           bullets: [
             'CSS — <strong>Cascading Style Sheets</strong>, HTML elementlarini stillashtirish tili',
-            'Rang, shrift, joy, o'lcham kabi vizual xususiyatlarni boshqaradi',
+            "Rang, shrift, joy, o'lcham kabi vizual xususiyatlarni boshqaradi",
           ],
         },
         {
@@ -75,8 +75,8 @@ export const lessons = {
         { uz: 'stil', en: 'style', ru: 'стиль' },
         { uz: 'selektor', en: 'selector', ru: 'селектор' },
         { uz: 'chegara', en: 'border', ru: 'граница' },
-        { uz: 'ichki bo'sh joy', en: 'padding', ru: 'отступ внутренний' },
-        { uz: 'tashqi bo'sh joy', en: 'margin', ru: 'отступ внешний' },
+        { uz: "ichki bo'sh joy", en: 'padding', ru: 'отступ внутренний' },
+        { uz: "tashqi bo'sh joy", en: 'margin', ru: 'отступ внешний' },
       ],
       resources: [
         { title: 'MDN — CSS Box Model', url: 'developer.mozilla.org/css/box-model' },
@@ -98,9 +98,9 @@ export const lessons = {
         {
           heading: 'Flexbox',
           bullets: [
-            'display: flex — elementlarni qatorga yoki ustun qilib joylashtiradi',
-            '<strong>justify-content</strong> — gorizontal yo'nalish',
-            '<strong>align-items</strong> — vertikal yo'nalish',
+            "display: flex — elementlarni qatorga yoki ustun qilib joylashtiradi",
+            "<strong>justify-content</strong> — gorizontal yo'nalish",
+            "<strong>align-items</strong> — vertikal yo'nalish",
           ],
         },
         {
@@ -108,7 +108,7 @@ export const lessons = {
           bullets: [
             'display: grid — 2D layout yaratadi',
             '<strong>grid-template-columns</strong> — ustun soni va kengligi',
-            'repeat() va fr birligi ishlatiladi',
+            "repeat() va fr birligi ishlatiladi",
           ],
         },
       ],
@@ -120,7 +120,7 @@ export const lessons = {
       ],
       resources: [
         { title: 'CSS Tricks — Flexbox Guide', url: 'css-tricks.com/flexbox' },
-        { title: 'Grid Garden (o'yin)', url: 'cssgridgarden.com' },
+        { title: "Grid Garden (o'yin)", url: 'cssgridgarden.com' },
       ],
       code: null,
     },
@@ -136,34 +136,34 @@ export const lessons = {
       strategies: ['Variables', 'Data Types', 'let/const', 'typeof'],
       content: [
         {
-          heading: 'O'zgaruvchilar',
+          heading: "O'zgaruvchilar",
           bullets: [
-            '<strong>let</strong> — o'zgartirilishi mumkin bo'lgan o'zgaruvchi',
-            '<strong>const</strong> — o'zgartirilmaydigan o'zgaruvchi',
-            '<strong>var</strong> — eski usul, ishlatmang',
+            "<strong>let</strong> — o'zgartirilishi mumkin bo'lgan o'zgaruvchi",
+            "<strong>const</strong> — o'zgartirilmaydigan o'zgaruvchi",
+            "<strong>var</strong> — eski usul, ishlatmang",
           ],
         },
         {
-          heading: 'Ma'lumot turlari',
+          heading: "Ma'lumot turlari",
           bullets: [
             '<strong>string</strong> — matn: "salom"',
             '<strong>number</strong> — son: 42, 3.14',
             '<strong>boolean</strong> — true yoki false',
-            '<strong>null / undefined</strong> — bo'sh qiymat',
+            "<strong>null / undefined</strong> — bo'sh qiymat",
           ],
         },
       ],
       vocabulary: [
-        { uz: 'o'zgaruvchi', en: 'variable', ru: 'переменная' },
-        { uz: 'ma\'lumot turi', en: 'data type', ru: 'тип данных' },
+        { uz: "o'zgaruvchi", en: 'variable', ru: 'переменная' },
+        { uz: "ma'lumot turi", en: 'data type', ru: 'тип данных' },
         { uz: 'qiymat', en: 'value', ru: 'значение' },
-        { uz: 'e\'lon qilish', en: 'declare', ru: 'объявить' },
+        { uz: "e'lon qilish", en: 'declare', ru: 'объявить' },
       ],
       resources: [
         { title: 'MDN — JavaScript', url: 'developer.mozilla.org/js' },
         { title: 'javascript.info', url: 'javascript.info' },
       ],
-      code: `let name = 'Dovudbek';\nconst age = 21;\n\nconsole.log(name); // "Dovudbek"\nconsole.log(typeof age); // "number"`,
+      code: "let name = 'Dovudbek';\nconst age = 21;\n\nconsole.log(name); // \"Dovudbek\"\nconsole.log(typeof age); // \"number\"",
     },
     {
       id: 'js-functions',
@@ -179,7 +179,7 @@ export const lessons = {
         {
           heading: 'Funksiyalar',
           bullets: [
-            '<strong>function</strong> kalit so'zi yoki arrow => sintaksisi',
+            "<strong>function</strong> kalit so'zi yoki arrow => sintaksisi",
             'Parametrlar va qaytarish qiymati',
             'Higher-order functions: map, filter, reduce',
           ],
@@ -196,7 +196,7 @@ export const lessons = {
       vocabulary: [
         { uz: 'funksiya', en: 'function', ru: 'функция' },
         { uz: 'massiv', en: 'array', ru: 'массив' },
-        { uz: 'ob\'ekt', en: 'object', ru: 'объект' },
+        { uz: "ob'ekt", en: 'object', ru: 'объект' },
         { uz: 'parametr', en: 'parameter', ru: 'параметр' },
         { uz: 'qaytarish', en: 'return', ru: 'возврат' },
       ],
@@ -204,7 +204,7 @@ export const lessons = {
         { title: 'javascript.info — Arrays', url: 'javascript.info/array' },
         { title: 'MDN — Functions', url: 'developer.mozilla.org/functions' },
       ],
-      code: `const nums = [1, 2, 3, 4, 5];\n\nconst doubled = nums.map(n => n * 2);\n// [2, 4, 6, 8, 10]\n\nconst evens = nums.filter(n => n % 2 === 0);\n// [2, 4]`,
+      code: "const nums = [1, 2, 3, 4, 5];\n\nconst doubled = nums.map(n => n * 2);\n// [2, 4, 6, 8, 10]\n\nconst evens = nums.filter(n => n % 2 === 0);\n// [2, 4]",
     },
     {
       id: 'react-intro',
@@ -218,34 +218,34 @@ export const lessons = {
       strategies: ['React.js', 'Component', 'Virtual DOM', 'Node.js', 'NPM', 'Framework vs Library'],
       content: [
         {
-          heading: 'React o'zi nima?',
+          heading: "React o'zi nima?",
           bullets: [
-            'React — dinamik va interaktiv UI yaratishga yordam beruvchi <strong>JavaScript kutubxonasi</strong>',
+            "React — dinamik va interaktiv UI yaratishga yordam beruvchi <strong>JavaScript kutubxonasi</strong>",
             '2011 yilda <strong>Facebook</strong> kompaniyasida ishlab chiqilgan',
-            'U ko'p foydalaniladigan JS kutubxonasi hisoblanadi',
+            "U ko'p foydalaniladigan JS kutubxonasi hisoblanadi",
           ],
         },
         {
           heading: 'Framework va Library ning farqi',
           bullets: [
-            '<strong>Library</strong> (kutubxona) — maxsus funksional xizmatlarni ta\'minlovchi <em>uskuna</em>',
-            '<strong>Framework</strong> — ilovalarni, projectlarni yaratish uchun uskunalar va ko\'rsatmalar to\'plami',
+            "<strong>Library</strong> (kutubxona) — maxsus funksional xizmatlarni ta'minlovchi <em>uskuna</em>",
+            "<strong>Framework</strong> — ilovalarni, projectlarni yaratish uchun uskunalar va ko'rsatmalar to'plami",
           ],
         },
         {
           heading: 'React DOM qanday ishlaydi?',
           bullets: [
-            'React haqiqiy DOM-ga yangilanishlarni optimallashtirish uchun <strong>virtual DOM</strong>-dan foydalanadi',
-            'Komponentning holati o\'zgarganda, React yangi virtual DOM daraxtini yaratadi',
-            'Keyin faqat zarur o\'zgarishlarni haqiqiy DOMga qo\'llaydi',
+            "React haqiqiy DOM-ga yangilanishlarni optimallashtirish uchun <strong>virtual DOM</strong>-dan foydalanadi",
+            "Komponentning holati o'zgarganda, React yangi virtual DOM daraxtini yaratadi",
+            "Keyin faqat zarur o'zgarishlarni haqiqiy DOMga qo'llaydi",
           ],
         },
       ],
       vocabulary: [
         { uz: 'foydalanuvchi', en: 'user', ru: 'пользователь' },
         { uz: 'ish muhiti, interfeys', en: 'interface', ru: 'интерфейс' },
-        { uz: 'o\'zaro ta\'sir qiladigan', en: 'interactive', ru: 'интерактивный' },
-        { uz: 'dinamik, o\'zgaruvchan', en: 'dynamic', ru: 'динамичный' },
+        { uz: "o'zaro ta'sir qiladigan", en: 'interactive', ru: 'интерактивный' },
+        { uz: "dinamik, o'zgaruvchan", en: 'dynamic', ru: 'динамичный' },
         { uz: 'kutubxona', en: 'library', ru: 'библиотека' },
         { uz: 'ramka', en: 'framework', ru: 'структура, рамки' },
         { uz: 'tarkibiy qism', en: 'component', ru: 'компонент' },
@@ -260,7 +260,7 @@ export const lessons = {
         { title: 'React Components Reference', url: 'react.dev/reference/react/Component' },
         { title: 'React Crash Course — YouTube', url: 'youtube.com' },
       ],
-      code: `import React, { useState } from 'react';\n\nfunction App() {\n  // useState hook for managing state\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <h1>Counter: {count}</h1>\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </div>\n  );\n}\n\nexport default App;`,
+      code: "import React, { useState } from 'react';\n\nfunction App() {\n  // useState hook for managing state\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <h1>Counter: {count}</h1>\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </div>\n  );\n}\n\nexport default App;",
     },
     {
       id: 'react-components',
@@ -296,12 +296,12 @@ export const lessons = {
 }
 
 export async function fetchLessons(courseId) {
-  await new Promise((r) => setTimeout(r, 300))
+  await delay(300)
   return lessons[courseId] ?? []
 }
 
 export async function fetchLesson(lessonId) {
-  await new Promise((r) => setTimeout(r, 200))
+  await delay(200)
   for (const arr of Object.values(lessons)) {
     const found = arr.find((l) => l.id === lessonId)
     if (found) return found
