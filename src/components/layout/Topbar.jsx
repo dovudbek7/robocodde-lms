@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { HiMenu, HiSearch } from 'react-icons/hi'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 
 const titles = {
   '/': 'Bosh sahifa',
@@ -39,7 +39,7 @@ export default function Topbar({ onMenuClick }) {
             className="bg-transparent outline-none text-sm text-ios-label placeholder:text-ios-gray4 w-full"
           />
         </div>
-        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-xs font-bold shrink-0">D</div>
+        <Link to="/profile" className="w-8 h-8 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-xs font-bold shrink-0 hover:opacity-85 transition-opacity">D</Link>
       </div>
     </header>
   )
