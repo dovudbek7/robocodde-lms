@@ -3,6 +3,7 @@ import { HiLockClosed, HiCheckCircle, HiArrowRight } from "react-icons/hi";
 import { useLessons } from "../hooks/useLessons";
 import { useCourse } from "../hooks/useCourses";
 import { useProgress } from "../hooks/useProgress";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import ProgressBar from "../components/ui/ProgressBar";
 
 function groupByModule(lessons) {
@@ -24,6 +25,7 @@ export default function Lessons() {
   const { data: course } = useCourse(courseId);
   const { data: lessons = [], isLoading } = useLessons(courseId);
   const { isCompleted } = useProgress();
+  useDocumentTitle(course ? `${course.title} Kursi` : 'Kurs darslari');
 
   const modules = groupByModule(lessons);
   const moduleKeys = Object.keys(modules);

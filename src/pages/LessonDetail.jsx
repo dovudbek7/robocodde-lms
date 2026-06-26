@@ -9,6 +9,7 @@ import {
 } from "react-icons/hi";
 import { useLesson, useQuiz } from "../hooks/useLessons";
 import { useProgress } from "../hooks/useProgress";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import VocabTable from "../components/lesson/VocabTable";
 import ResourcesTab from "../components/lesson/ResourcesTab";
 import QuizTab from "../components/lesson/QuizTab";
@@ -36,6 +37,8 @@ export default function LessonDetail() {
   const { data: lesson, isLoading } = useLesson(lessonId);
   const { data: quiz = [] } = useQuiz(lessonId);
   const { completeLesson, isCompleted } = useProgress();
+
+  useDocumentTitle(lesson?.title ?? 'Dars')
 
   if (isLoading)
     return (
