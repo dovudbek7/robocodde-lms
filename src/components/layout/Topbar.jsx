@@ -4,6 +4,7 @@ import { useLocation, Link } from 'react-router-dom'
 
 const titles = {
   '/': 'Bosh sahifa',
+  '/courses': 'Kurslar',
   '/progress': 'Progressim',
   '/profile': 'Profil',
 }
