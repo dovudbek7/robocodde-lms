@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { HiPencil, HiMail, HiPhone, HiCalendar, HiLocationMarker, HiLogout } from 'react-icons/hi'
 import { useProgress } from '../hooks/useProgress'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { useUser } from '../hooks/useUser'
 
 export default function Profile() {
   useDocumentTitle('Profil')
   const { completedCount } = useProgress()
+  const { data: user } = useUser()
   const [editing, setEditing] = useState(false)
-  const [name, setName] = useState('Dovudbek Xabibullayev')
-  const [email, setEmail] = useState('dovudbek@robocodde.uz')
+  const [name, setName] = useState(user?.name ?? 'Dovudbek Xabibullayev')
+  const [email, setEmail] = useState(user?.email ?? 'dovudbek@robocodde.uz')
 
   return (
     <div className="p-5 lg:p-8 max-w-[700px]">
