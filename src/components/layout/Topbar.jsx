@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { HiMenu, HiSearch } from 'react-icons/hi'
 import { useLocation, Link } from 'react-router-dom'
+import { useUser } from '../../hooks/useUser'
 
 const titles = {
   '/': 'Bosh sahifa',
@@ -18,6 +19,7 @@ function getTitle(pathname) {
 
 export default function Topbar({ onMenuClick }) {
   const { pathname } = useLocation()
+  const { data: user } = useUser()
 
   return (
     <header className="bg-white/88 backdrop-blur-nav border-b border-ios-gray2 h-14 flex items-center justify-between px-5 lg:px-8 sticky top-0 z-[100]">
@@ -41,7 +43,14 @@ export default function Topbar({ onMenuClick }) {
             className="bg-transparent outline-none text-sm text-ios-label placeholder:text-ios-gray4 w-full"
           />
         </div>
-        <Link to="/profile" aria-label="Profil" className="w-8 h-8 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-xs font-bold shrink-0 hover:opacity-85 transition-opacity">D</Link>
+        {user?.streak > 0 && (
+          <span className="hidden sm:flex items-center gap-1 text-xs font-semibold text-ios-orange bg-orange-50 rounded-full px-2.5 py-1">
+            🔥 {user.streak}
+          </span>
+        )}
+        <Link to="/profile" aria-label="Profil" className="w-8 h-8 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-xs font-bold shrink-0 hover:opacity-85 transition-opacity">
+          {user?.avatar ?? 'D'}
+        </Link>
       </div>
     </header>
   )
