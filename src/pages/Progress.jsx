@@ -4,6 +4,7 @@ import ProgressBar from '../components/ui/ProgressBar'
 
 const weekDays = ['Du', 'Se', 'Ch', 'Pa', 'Ju', 'Sh', 'Ya']
 const weekActivity = [3, 5, 2, 4, 6, 3, 1]
+const todayIdx = (new Date().getDay() + 6) % 7
 
 export default function Progress() {
   const { completedCount } = useProgress()
@@ -37,10 +38,14 @@ export default function Progress() {
           {weekDays.map((day, i) => (
             <div key={day} className="flex-1 flex flex-col items-center gap-1">
               <div
-                className="w-full rounded-lg bg-ios-blue/20 transition-all"
-                style={{ height: `${(weekActivity[i] / 6) * 100}%`, background: weekActivity[i] > 4 ? '#007AFF' : 'rgba(0,122,255,0.2)' }}
+                className="w-full rounded-lg transition-all"
+                style={{
+                  height: `${(weekActivity[i] / 6) * 100}%`,
+                  background: i === todayIdx ? '#007AFF' : weekActivity[i] > 4 ? '#007AFF' : 'rgba(0,122,255,0.2)',
+                  boxShadow: i === todayIdx ? '0 0 0 2px rgba(0,122,255,0.3)' : 'none',
+                }}
               />
-              <span className="text-[10px] text-ios-gray4">{day}</span>
+              <span className={`text-[10px] ${i === todayIdx ? 'text-ios-blue font-bold' : 'text-ios-gray4'}`}>{day}</span>
             </div>
           ))}
         </div>
