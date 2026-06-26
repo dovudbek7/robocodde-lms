@@ -16,6 +16,14 @@ const activity = [
   { color: 'bg-ios-orange', text: 'CSS Grid mashq bajarildi', time: '5 kun' },
 ]
 
+function getGreeting() {
+  const h = new Date().getHours()
+  if (h < 6) return "Yaxshi tun 🌙"
+  if (h < 12) return "Xayrli tong ☀️"
+  if (h < 18) return "Xayrli kun 👋"
+  return "Xayrli oqshom 🌆"
+}
+
 export default function Home() {
   const { data: courses = [], isLoading } = useCourses()
   const { completedCount } = useProgress()
@@ -29,7 +37,7 @@ export default function Home() {
           <div className="relative bg-ios-label rounded-2xl p-7 text-white mb-6 overflow-hidden">
             <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-ios-blue/20" />
             <div className="absolute -bottom-16 left-5 w-40 h-40 rounded-full bg-ios-purple/15" />
-            <p className="text-sm text-white/55 mb-1 relative">Xush kelibsiz 👋</p>
+            <p className="text-sm text-white/55 mb-1 relative">{getGreeting()}</p>
             <h2 className="text-2xl font-extrabold tracking-tight mb-6 relative">Dovudbek Xabibullayev</h2>
             <div className="flex gap-8 relative">
               {[
