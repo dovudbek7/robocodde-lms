@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
+  safelist: [
+    'bg-blue-50', 'bg-green-50', 'bg-purple-50', 'bg-orange-50', 'bg-red-50',
+    'text-ios-blue', 'text-ios-green', 'text-ios-purple', 'text-ios-orange', 'text-ios-red',
+  ],
   theme: {
     extend: {
       colors: {
