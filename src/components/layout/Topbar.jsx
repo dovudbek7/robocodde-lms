@@ -24,6 +24,7 @@ export default function Topbar({ onMenuClick }) {
       <div className="flex items-center gap-3">
         <button
           onClick={onMenuClick}
+          aria-label="Menyu ochish"
           className="lg:hidden p-1.5 rounded-lg hover:bg-ios-gray1 transition-colors"
         >
           <HiMenu className="text-2xl text-ios-label" />
@@ -40,7 +41,7 @@ export default function Topbar({ onMenuClick }) {
             className="bg-transparent outline-none text-sm text-ios-label placeholder:text-ios-gray4 w-full"
           />
         </div>
-        <Link to="/profile" className="w-8 h-8 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-xs font-bold shrink-0 hover:opacity-85 transition-opacity">D</Link>
+        <Link to="/profile" aria-label="Profil" className="w-8 h-8 rounded-full bg-gradient-to-br from-ios-blue to-ios-purple flex items-center justify-center text-white text-xs font-bold shrink-0 hover:opacity-85 transition-opacity">D</Link>
       </div>
     </header>
   )
