@@ -6,10 +6,12 @@ import LessonDetail from './pages/LessonDetail'
 import Progress from './pages/Progress'
 import Profile from './pages/Profile'
 import NotFound from './pages/NotFound'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
