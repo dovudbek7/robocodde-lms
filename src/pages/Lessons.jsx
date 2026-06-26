@@ -92,18 +92,20 @@ export default function Lessons() {
                   </p>
                   <div className="bg-white rounded-2xl overflow-hidden">
                     {modules[mod].map((lesson, i) => {
-                      const locked = lesson.status === "locked";
+                      const completedLocally = isCompleted(lesson.id);
+                      const effectiveStatus = completedLocally ? "done" : lesson.status;
+                      const locked = effectiveStatus === "locked";
                       return (
                         <div
                           key={lesson.id}
                           className={`flex items-center gap-3.5 px-5 py-4 ${i < modules[mod].length - 1 ? "border-b border-ios-gray2" : ""} ${locked ? "" : "hover:bg-ios-gray1 cursor-pointer"} transition-colors`}
                         >
                           <div
-                            className={`w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold shrink-0 ${statusDot[lesson.status]}`}
+                            className={`w-8 h-8 rounded-full flex items-center justify-center text-[13px] font-bold shrink-0 ${statusDot[effectiveStatus]}`}
                           >
-                            {lesson.status === "done"
+                            {effectiveStatus === "done"
                               ? "✓"
-                              : lesson.status === "active"
+                              : effectiveStatus === "active"
                                 ? lesson.num
                                 : lesson.num}
                           </div>
@@ -114,20 +116,20 @@ export default function Lessons() {
                               {lesson.title}
                             </p>
                             <p className="text-xs text-ios-gray4 mt-0.5">
-                              {lesson.status === "done" && lesson.quizScore
+                              {effectiveStatus === "done" && lesson.quizScore
                                 ? `Quiz: ${lesson.quizScore}%`
                                 : lesson.duration}
                             </p>
                           </div>
                           <div className="flex items-center gap-2 shrink-0">
-                            {lesson.status === "done" && lesson.quizScore && (
+                            {effectiveStatus === "done" && lesson.quizScore && (
                               <span className="text-xs font-semibold text-ios-green">
                                 {lesson.quizScore}%
                               </span>
                             )}
                             {locked ? (
                               <HiLockClosed className="text-ios-gray3 text-lg" />
-                            ) : lesson.status === "active" ? (
+                            ) : effectiveStatus === "active" ? (
                               <Link
                                 to={`/lessons/${lesson.id}`}
                                 className="text-xs font-semibold text-white bg-ios-blue rounded-full px-3.5 py-1.5"
