@@ -3,7 +3,7 @@ import { HiHome, HiBookOpen, HiChartBar, HiUser } from 'react-icons/hi'
 
 const items = [
   { label: 'Bosh sahifa', to: '/', icon: HiHome, exact: true },
-  { label: 'Kurslar', to: '/courses/frontend', icon: HiBookOpen },
+  { label: 'Kurslar', to: '/courses', icon: HiBookOpen },
   { label: 'Progress', to: '/progress', icon: HiChartBar },
   { label: 'Profil', to: '/profile', icon: HiUser },
 ]

@@ -5,6 +5,7 @@ import Lessons from './pages/Lessons'
 import LessonDetail from './pages/LessonDetail'
 import Progress from './pages/Progress'
 import Profile from './pages/Profile'
+import Courses from './pages/Courses'
 import NotFound from './pages/NotFound'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -15,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="courses" element={<Courses />} />
           <Route path="courses/:courseId" element={<Lessons />} />
           <Route path="lessons/:lessonId" element={<LessonDetail />} />
           <Route path="progress" element={<Progress />} />
