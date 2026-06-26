@@ -28,6 +28,10 @@ export default function Home() {
   const { data: courses = [], isLoading } = useCourses()
   const { completedCount } = useProgress()
 
+  const totalLessons = courses.reduce((s, c) => s + c.totalLessons, 0)
+  const totalCompleted = courses.reduce((s, c) => s + c.completedLessons, 0)
+  const overallPct = totalLessons > 0 ? Math.round((totalCompleted / totalLessons) * 100) : 0
+
   return (
     <div className="p-5 lg:p-8 max-w-[1100px]">
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_300px] gap-6">
@@ -41,9 +45,9 @@ export default function Home() {
             <h2 className="text-2xl font-extrabold tracking-tight mb-6 relative">Dovudbek Xabibullayev</h2>
             <div className="flex gap-8 relative">
               {[
-                { val: completedCount || 12, lbl: "Dars o'tildi" },
+                { val: completedCount || totalCompleted || 12, lbl: "Dars o'tildi" },
                 { val: 3, lbl: 'Quiz yechildi' },
-                { val: '68%', lbl: 'Umumiy progress' },
+                { val: `${overallPct || 68}%`, lbl: 'Umumiy progress' },
               ].map(({ val, lbl }) => (
                 <div key={lbl}>
                   <p className="text-2xl font-extrabold">{val}</p>
