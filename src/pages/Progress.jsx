@@ -1,5 +1,6 @@
 import { useProgress } from '../hooks/useProgress'
 import { useCourses } from '../hooks/useCourses'
+import { useUser } from '../hooks/useUser'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import ProgressBar from '../components/ui/ProgressBar'
 
@@ -11,6 +12,7 @@ export default function Progress() {
   useDocumentTitle('Progressim')
   const { completedCount } = useProgress()
   const { data: courses = [] } = useCourses()
+  const { data: user } = useUser()
 
   const totalLessons = courses.reduce((s, c) => s + c.totalLessons, 0)
   const totalCompleted = courses.reduce((s, c) => s + c.completedLessons, 0)
@@ -25,7 +27,7 @@ export default function Progress() {
           { val: completedCount || totalCompleted || 12, lbl: "O'tilgan darslar", color: 'text-ios-blue' },
           { val: `${studyHours}h`, lbl: "O'qish vaqti", color: 'text-ios-green' },
           { val: `${overallPct}%`, lbl: 'Umumiy progress', color: 'text-ios-purple' },
-          { val: 7, lbl: 'Kun streak 🔥', color: 'text-ios-orange' },
+          { val: user?.streak ?? 7, lbl: 'Kun streak 🔥', color: 'text-ios-orange' },
         ].map(({ val, lbl, color }) => (
           <div key={lbl} className="bg-white rounded-2xl p-4 text-center">
             <p className={`text-3xl font-extrabold ${color}`}>{val}</p>
